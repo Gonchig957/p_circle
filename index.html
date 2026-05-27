@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Баяржаргалийн Period Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Баяржаргалийн period circle хэмжигч</h1>
+    <p>Сарын тэмдэг болон нөхөн үржихүйн мөчлөг хянах хувийн туслах</p>
+</header>
+
+<div class="main-container">
+    
+    <div class="left-panel">
+        <div class="card circle-box">
+            <div class="circle-container">
+                <canvas id="circleCanvas" width="220" height="220"></canvas>
+                <div class="circle-text">
+                    <span class="label-txt">Мөчлөгийн хоног</span>
+                    <span class="day-num" id="currentDayTxt">1</span>
+                    <span class="phase-badge" id="phaseBadgeTxt">---</span>
+                </div>
+            </div>
+            <p id="daysLeftTxt">---</p>
+        </div>
+
+        <div class="card inputs-box">
+            <h3>Циклийн тохиргоо</h3>
+            <div class="input-group">
+                <label>Сарын тэмдэг эхэлсэн өдөр:</label>
+                <input type="date" id="startDateInput">
+            </div>
+            <div class="input-group">
+                <label>Мөчлөгийн урт (хоногоор):</label>
+                <input type="number" id="cycleLengthInput" value="28" min="20" max="45">
+            </div>
+            <div class="input-group">
+                <label>Үргэлжлэх хугацаа (хоногоор):</label>
+                <input type="number" id="periodLengthInput" value="5" min="2" max="10">
+            </div>
+        </div>
+    </div>
+
+    <div class="card calendar-panel">
+        <div class="calendar-header">
+            <button class="cal-btn" id="prevMonthBtn">&lt;</button>
+            <h2 id="calendarMonthYear">---- оны -- сар</h2>
+            <button class="cal-btn" id="nextMonthBtn">&gt;</button>
+        </div>
+        
+        <div class="weekdays">
+            <div>Да</div><div>Мя</div><div>Лх</div><div>Пү</div><div>Ба</div><div>Бя</div><div>Ня</div>
+        </div>
+        
+        <div class="days-grid" id="daysGrid"></div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color legend-period"></div>Сарын тэмдэг</div>
+            <div class="legend-item"><div class="legend-color legend-fertile"></div>Үр тогтох үе</div>
+            <div class="legend-item"><div class="legend-color legend-ovulation"></div>Оввуляци</div>
+        </div>
+
+        <div class="tip-box">
+            💡 <b>Зөвлөмж:</b> Хуанлийн аль ч өдөр дээр даран тухайн өдрийг сарын тэмдэг эхэлсэн өдөр болгон засаж өөрчлөх боломжтой.
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
